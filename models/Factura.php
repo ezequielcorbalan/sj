@@ -30,9 +30,9 @@ class Factura extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'fecha', 'id_cliente'], 'required'],
-            [['id', 'id_cliente'], 'integer'],
+            [['fecha', 'id_cliente'], 'required'],
             [['fecha'], 'safe'],
+            [['id_cliente'], 'integer'],
             [['id_cliente'], 'exist', 'skipOnError' => true, 'targetClass' => Cliente::className(), 'targetAttribute' => ['id_cliente' => 'id']],
         ];
     }

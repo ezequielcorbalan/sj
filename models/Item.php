@@ -15,8 +15,8 @@ use Yii;
  * @property string $impuesto
  * @property string $costo_total
  *
- * @property Producto $idProducto
  * @property Factura $idFactura
+ * @property Producto $idProducto
  */
 class Item extends \yii\db\ActiveRecord
 {
@@ -34,11 +34,11 @@ class Item extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'id_factura', 'id_producto', 'cantidad', 'costo_unitario', 'impuesto', 'costo_total'], 'required'],
-            [['id', 'id_factura', 'id_producto', 'cantidad'], 'integer'],
+            [['id_factura', 'id_producto', 'cantidad', 'costo_unitario', 'impuesto', 'costo_total'], 'required'],
+            [['id_factura', 'id_producto', 'cantidad'], 'integer'],
             [['costo_unitario', 'impuesto', 'costo_total'], 'string', 'max' => 45],
-            [['id_producto'], 'exist', 'skipOnError' => true, 'targetClass' => Producto::className(), 'targetAttribute' => ['id_producto' => 'id']],
             [['id_factura'], 'exist', 'skipOnError' => true, 'targetClass' => Factura::className(), 'targetAttribute' => ['id_factura' => 'id']],
+            [['id_producto'], 'exist', 'skipOnError' => true, 'targetClass' => Producto::className(), 'targetAttribute' => ['id_producto' => 'id']],
         ];
     }
 
@@ -61,16 +61,16 @@ class Item extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdProducto()
+    public function getIdFactura()
     {
-        return $this->hasOne(Producto::className(), ['id' => 'id_producto']);
+        return $this->hasOne(Factura::className(), ['id' => 'id_factura']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdFactura()
+    public function getIdProducto()
     {
-        return $this->hasOne(Factura::className(), ['id' => 'id_factura']);
+        return $this->hasOne(Producto::className(), ['id' => 'id_producto']);
     }
 }

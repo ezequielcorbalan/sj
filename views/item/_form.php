@@ -16,7 +16,6 @@ use app\models\Producto;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id')->textInput() ?>
      <?php
         $producto = new Producto();
         $factura = new Factura();

@@ -30,8 +30,7 @@ class Producto extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'nombre', 'descripcion', 'precio'], 'required'],
-            [['id'], 'integer'],
+            [['nombre', 'descripcion', 'precio'], 'required'],
             [['nombre', 'descripcion', 'precio'], 'string', 'max' => 45],
         ];
     }

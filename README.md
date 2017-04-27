@@ -1,3 +1,30 @@
+ABM Grupo San Jorge
+============================
+    El ejercicio en si era sencillo, utilice yii2 ya que es un frame muy potente
+que tiene un crud generator impresionante. El trabajo lo hice en 1:30,las complicaciones que tuve fueron las siguientes:
+        * El CRUD no generaba los select para poder elegir la factura en los items, o el usuario en la factura.
+            (en realidad si pero como no me salia y no queria perder tiempo investigue por mi lado)
+        * DatePicker para el campo fecha.
+        * JQUERY UI no queria funcionar, peliando 20m lo pude hacer funcionar
+
+Aspectos a mejorar
+============================
+
+    *Al programa le falta mensajes de errores cuando se quieren borrar elementos que tienen dañarian la persistencia en la db
+Ejemplo:
+        Borrar una factura sin sacar los items antes, o hacer toda la validacion que elimine los itmes automaticamente.
+    *Cambiar los mensajes de error al español(tiene un archivo de idioma pero no queria gastar mas tiempo en el ejercio)
+    *Integrar JQUERIUI como assets del sistema no una libreria metida abajo de todo en el body.
+    *Todas las validaciones se hacen por front y por modelo, no me moleste mucho en mejorarlas.
+    *Usar Docker para dejar el entorno armado con el sistema
+    *instalar con composer
+GII(CRUD generator)
+============================
+para intrar y ver la herramienta tenes que poner index.php?r=gii, alli tendras todas las herramientas disponibles.
+
+
+
+
 Yii 2 Basic Project Template
 ============================
 

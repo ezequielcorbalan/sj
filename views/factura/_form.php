@@ -15,7 +15,6 @@ use app\models\Cliente
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id')->textInput() ?>
 
     <?= $form->field($model, 'fecha')->textInput(['readonly'=>'true']) ?>
 
